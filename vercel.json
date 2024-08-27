@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/Build/Bird.data.br",
+      "source": "/Build/Bird-Shot.data.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "/Build/Bird.wasm.br",
+      "source": "/Build/Bird-Shot.wasm.br",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/Build/Bird.framework.js.br",
+      "source": "/Build/Bird-Shot.framework.js.br",
       "headers": [
         {
           "key": "Content-Encoding",
