@@ -71,6 +71,14 @@
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
+        window.addEventListener("message", function (event) {
+          var receivedMessage = event.data;
+          if (event.origin === "https://bird-shot.vercel.app") {
+            var code = decodeURIComponent(
+              receivedMessage
+            )}
+            instance.SendMessage("== CORE ==", "test", code);
+          });
         document.body.style.overflow = "hidden";
         canvas.style.width = document.documentElement.clientWidth + "px";
         canvas.style.height = document.documentElement.clientHeight + "px";
