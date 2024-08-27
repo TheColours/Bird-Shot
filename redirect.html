@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="TemplateData/favicon.ico" type="image/x-icon" />
+    <title>Redirect</title>
+  </head>
+  <body>
+    The window will automatically close.
+  </body>
+  <script defer>
+    window.addEventListener("DOMContentLoaded", function () {
+      var currentURL = window.location.href;
+      var startIndex = currentURL.indexOf("code=") + "code=".length;
+      var endindex = currentURL.indexOf("&scope");
+      var code = currentURL.substring(startIndex, endindex);
+      window.opener.postMessage(code, "*");
+      window.close();
+    });
+  </script>
+</html>
