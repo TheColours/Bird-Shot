@@ -8,6 +8,7 @@
     <link rel="icon" href="TemplateData/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="TemplateData/style.css" />
     <link rel="stylesheet" href="TemplateData/loading.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -65,9 +66,6 @@
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
-
-
-
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
@@ -77,7 +75,7 @@
             var code = decodeURIComponent(
               receivedMessage
             )}
-            instance.SendMessage("== CORE ==", "test", code);
+            instance.SendMessage("== CORE ==", "GetAllToken", code);
           });
         document.body.style.overflow = "hidden";
         canvas.style.width = document.documentElement.clientWidth + "px";
