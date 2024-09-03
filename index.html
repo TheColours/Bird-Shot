@@ -71,7 +71,7 @@
       script.onload = () => {
         window.addEventListener("message", function (event) {
           var receivedMessage = event.data;
-          if (event.origin === "https://bird-shot.vercel.app") {
+          if (event.origin === "https://bird-shot.vercel.app" || event.origin === "https://bird-shot.netlify.app") {
             var code = decodeURIComponent(
               receivedMessage
             )}
