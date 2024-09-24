@@ -1,103 +1,166 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Bird Shot</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="TemplateData/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="TemplateData/style.css" />
-    <link rel="stylesheet" href="TemplateData/loading.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
-    <script>
-      !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="jX5zMkt6R2Y71Pi3LetFIEETrpZuqKNk";;analytics.SNIPPET_VERSION="5.2.0";
-      analytics.load("jX5zMkt6R2Y71Pi3LetFIEETrpZuqKNk");
-      analytics.page();
-      }}();
-    </script>
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" style="display: none;"></canvas>
-      <div id="unity-warning"></div>
-      <div id="unity-footer"></div>
-    </div>
 
-    <div id="loading">
-      <div class="tetrominos">
-        <div class="tetromino box1"></div>
-        <div class="tetromino box2"></div>
-        <div class="tetromino box3"></div>
-        <div class="tetromino box4"></div>
-      </div>
-    </div>
-
-    <script>
-      
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var warningBanner = document.querySelector("#unity-warning");
-      var loading = document.querySelector("#loading");
-
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length
-            ? "block"
-            : "none";
-        }
-        var div = document.createElement("div");
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == "error") div.style = "background: red; padding: 10px;";
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Bird Shot</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="TemplateData/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="TemplateData/style.css" />
+  <link rel="stylesheet" href="TemplateData/loading.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
+  <script>
+    !function () {
+      var i = "analytics", analytics = window[i] = window[i] || [];
+      if (!analytics.initialize)
+        if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice.");
         else {
-          if (type == "warning")
-            div.style = "background: yellow; padding: 10px;";
-          setTimeout(function () {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
+          analytics.invoked = !0;
+          analytics.methods = [
+            "trackSubmit", "trackClick", "trackLink", "trackForm", "pageview",
+            "identify", "reset", "group", "track", "ready", "alias", "debug",
+            "page", "screen", "once", "off", "on", "addSourceMiddleware",
+            "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware", "register"
+          ];
+          analytics.factory = function (e) {
+            return function () {
+              if (window[i].initialized) return window[i][e].apply(window[i], arguments);
+              var n = Array.prototype.slice.call(arguments);
+              if (["track", "screen", "alias", "group", "page", "identify"].indexOf(e) > -1) {
+                var c = document.querySelector("link[rel='canonical']");
+                n.push({
+                  __t: "bpc",
+                  c: c && c.getAttribute("href") || void 0,
+                  p: location.pathname,
+                  u: location.href,
+                  s: location.search,
+                  t: document.title,
+                  r: document.referrer
+                });
+              }
+              n.unshift(e);
+              analytics.push(n);
+              return analytics;
+            };
+          };
+          for (var n = 0; n < analytics.methods.length; n++) {
+            var key = analytics.methods[n];
+            analytics[key] = analytics.factory(key);
+          }
+          analytics.load = function (key, n) {
+            var t = document.createElement("script");
+            t.type = "text/javascript";
+            t.async = !0;
+            t.setAttribute("data-global-segment-analytics-key", i);
+            t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+            var r = document.getElementsByTagName("script")[0];
+            r.parentNode.insertBefore(t, r);
+            analytics._loadOptions = n;
+          };
+          analytics._writeKey = "jX5zMkt6R2Y71Pi3LetFIEETrpZuqKNk";
+          analytics.SNIPPET_VERSION = "5.2.0";
+          analytics.load("Qe4iLBbecyOsKTKWmUGvHTl4VZnoRHv9");
+          analytics.page();
         }
-        updateBannerVisibility();
-      }
+    }();
+  </script>
+  <button onclick="functionA()">Click me to call Function A</button>
+  <script>
+    function functionA() {
+      analytics.track("Test custom Event", {
+        pro1: "Pro Annual",
+        accountType: "Facebook"
+      });
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Bird-Shot.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/Bird-Shot.data.br",
-        frameworkUrl: buildUrl + "/Bird-Shot.framework.js.br",
-        codeUrl: buildUrl + "/Bird-Shot.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "TheColors",
-        productName: "BirdShot",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        window.addEventListener("message", function (event) {
-          var receivedMessage = event.data;
-          if (event.origin === "https://bird-shot.vercel.app" || event.origin === "https://bird-shot.netlify.app") {
-            var code = decodeURIComponent(
-              receivedMessage
-            )}
-            instance.SendMessage("== CORE ==", "SetInfoGoogleByAuthCode", code);
-          });
-        document.body.style.overflow = "hidden";
-        canvas.style.width = document.documentElement.clientWidth + "px";
-        canvas.style.height = document.documentElement.clientHeight + "px";
-        createUnityInstance(canvas, config, (progress) => {})
-          .then((unityInstance) => {
-            loading.style.display = "none";
-            canvas.style.display = "block";
-            instance = unityInstance;
-          })
-          .catch((message) => {
-            alert(message);
-          });
-      };
-      document.body.appendChild(script);
-      </script>
-    </script>
-  </body>
+    }
+  </script>
+</head>
+
+<body>
+  <div id="unity-container" class="unity-desktop">
+    <canvas id="unity-canvas" style="display: none;"></canvas>
+    <div id="unity-warning"></div>
+    <div id="unity-footer"></div>
+  </div>
+
+  <div id="loading">
+    <div class="tetrominos">
+      <div class="tetromino box1"></div>
+      <div class="tetromino box2"></div>
+      <div class="tetromino box3"></div>
+      <div class="tetromino box4"></div>
+    </div>
+  </div>
+
+  <script>
+
+    var container = document.querySelector("#unity-container");
+    var canvas = document.querySelector("#unity-canvas");
+    var warningBanner = document.querySelector("#unity-warning");
+    var loading = document.querySelector("#loading");
+
+    function unityShowBanner(msg, type) {
+      function updateBannerVisibility() {
+        warningBanner.style.display = warningBanner.children.length
+          ? "block"
+          : "none";
+      }
+      var div = document.createElement("div");
+      div.innerHTML = msg;
+      warningBanner.appendChild(div);
+      if (type == "error") div.style = "background: red; padding: 10px;";
+      else {
+        if (type == "warning")
+          div.style = "background: yellow; padding: 10px;";
+        setTimeout(function () {
+          warningBanner.removeChild(div);
+          updateBannerVisibility();
+        }, 5000);
+      }
+      updateBannerVisibility();
+    }
+
+    var buildUrl = "Build";
+    var loaderUrl = buildUrl + "/Bird-Shot.loader.js";
+    var config = {
+      dataUrl: buildUrl + "/Bird-Shot.data.br",
+      frameworkUrl: buildUrl + "/Bird-Shot.framework.js.br",
+      codeUrl: buildUrl + "/Bird-Shot.wasm.br",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "TheColors",
+      productName: "BirdShot",
+      productVersion: "1.0",
+      showBanner: unityShowBanner,
+    };
+    var script = document.createElement("script");
+    script.src = loaderUrl;
+    script.onload = () => {
+      window.addEventListener("message", function (event) {
+        var receivedMessage = event.data;
+        if (event.origin === "https://bird-shot.vercel.app" || event.origin === "https://bird-shot.netlify.app") {
+          var code = decodeURIComponent(
+            receivedMessage
+          )
+        }
+        instance.SendMessage("== CORE ==", "SetInfoGoogleByAuthCode", code);
+      });
+      document.body.style.overflow = "hidden";
+      canvas.style.width = document.documentElement.clientWidth + "px";
+      canvas.style.height = document.documentElement.clientHeight + "px";
+      createUnityInstance(canvas, config, (progress) => { })
+        .then((unityInstance) => {
+          loading.style.display = "none";
+          canvas.style.display = "block";
+          instance = unityInstance;
+        })
+        .catch((message) => {
+          alert(message);
+        });
+    };
+    document.body.appendChild(script);
+  </script>
+  </script>
+</body>
+
 </html>
