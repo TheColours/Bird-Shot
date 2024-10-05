@@ -1,15 +1,17 @@
 {
-    "name": "Bird Shot",
-    "short_name": "Bird Shot",
-    "start_url": "index.html",
-    "display": "fullscreen",
-    "background_color": "#231F20",
-    "theme_color": "#000",
-    "description": "",
-    "icons": [{
-      "src": "TemplateData/icons/favicon.png",
+  "name": "Bird Shot",
+  "short_name": "Bird Shot",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "background_color": "#ffffff",
+  "theme_color": "#000",
+  "description": "",
+  "icons": [
+    {
+      "src": "TemplateData/icons/favicon.ico",
       "sizes": "144x144",
-      "type": "image/png",
+      "type": "image/ico",
       "purpose": "any maskable"
-    }]
-  }
+    }
+  ]
+}
