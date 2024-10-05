@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/Build/Bird-Shot.data.br",
+      "source": "/Build/(.*).unityweb",
       "headers": [
         {
           "key": "Content-Encoding",
@@ -10,32 +10,6 @@
         {
           "key": "Content-Type",
           "value": "application/octet-stream"
-        }
-      ]
-    },
-    {
-      "source": "/Build/Bird-Shot.wasm.br",
-      "headers": [
-        {
-          "key": "Content-Encoding",
-          "value": "br"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/wasm"
-        }
-      ]
-    },
-    {
-      "source": "/Build/Bird-Shot.framework.js.br",
-      "headers": [
-        {
-          "key": "Content-Encoding",
-          "value": "br"
-        },
-        {
-          "key": "Content-Type",
-          "value": "application/javascript"
         }
       ]
     }
