@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico" />
     <link rel="stylesheet" href="TemplateData/style.css" />
     <link rel="stylesheet" href="TemplateData/loading.css" />
-    <link rel="manifest" href="manifest.webmanifest" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.0/axios.min.js"></script>
     <script>
       !(function () {
@@ -187,9 +186,7 @@
         window.addEventListener("message", function (event) {
           var receivedMessage = event.data;
           if (
-            event.origin === "https://bird-shot.vercel.app" ||
-            event.origin === "https://bird-shot.netlify.app"
-          ) {
+            event.origin === "https://bird-shot.vercel.app") {
             var code = decodeURIComponent(receivedMessage);
           }
           instance.SendMessage("== CORE ==", "SetInfoGoogleByAuthCode", code);
